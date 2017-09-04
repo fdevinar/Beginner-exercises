@@ -1,4 +1,3 @@
-#Falta comentar o código abaixo
 import getpass
 import os
 #Initializes hidden word (with "_"), secret word list and wrong letters list
