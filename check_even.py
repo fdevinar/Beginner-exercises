@@ -12,3 +12,5 @@ for n in num:
         uneven += 1
 
 print ('Even: ' + str(even) + ' - Uneven: ' + str(uneven))
+
+pause=input()
