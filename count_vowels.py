@@ -28,3 +28,5 @@ for letter in vowlist:
 print ('Your word has ' + str(len(a)) + ' letter(s) A, ' + str(len(e)) + \
        ' letter(s) E, ' + str(len(i)) + ' letter(s) I, ' + str(len(o)) + \
        ' letter(s) O, and ' + str(len(u)) + ' letter(s) U.' )
+
+pause=input()
