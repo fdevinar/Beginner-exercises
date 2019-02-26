@@ -31,3 +31,5 @@ print('Is the password secure?')
 
 print(checksafe(word))
 
+pause = input()
+
