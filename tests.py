@@ -1,22 +1,34 @@
-# https://py.checkio.org/en/mission/popular-words/
+# https://py.checkio.org/en/mission/between-markers/
 
-def popular_words (text, array):
+def between_markers (string, init, final):
+    first = string.find(init)
+    last = string.find(final)
 
-    text = text.lower()
-    text = text.split()
+    print ('First:', first, ' Last:' , last)
 
-    print (text)
-    
-    popudict = {}
+    if (first == -1 and last == -1):
+        print ('Loop 1')
+        return (string)
 
-    for word in array:
-        if word in text:
-            print (word)
-            popudict.update({word: (text.count(word))})
-        else:
-            popudict.update({word: 0})
+    if (first == -1):
+        print ('Loop 2')
+        return (string[0:last])
 
-    return (popudict)
-        
-print (popular_words('When I was One I had just begun When I was Two I was nearly new',['i','was','three','near']))
+    if (last == -1):
+        print ('Loop 3')
+        return (string[first+len(init):999])
 
+    if (last < first):
+        print ('Loop 4')
+        return ''
+
+    print ('Loop 5')
+    return (string[(first+len(init)):last])    
+
+
+#print (between_markers('What is >apple<', '>', '<'))
+#print(between_markers('No[/b] hi', '[b]', '[/b]'))
+
+#print(between_markers("<head><title>My new site</title></head>","<title>","</title>"))
+
+print(between_markers("No [b]hi","[b]","[/b]"))
