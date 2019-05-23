@@ -11,17 +11,12 @@ def popular_words (text, array):
 
     for word in array:
         if word in text:
-            if (word in popudict.keys()):
-                popudict.update({word: (popudict.get(word)+1)})
-            else:
-                popudict.update({word: 1})
+            print (word)
+            popudict.update({word: (text.count(word))})
         else:
             popudict.update({word: 0})
-            
-    return (popudict)    
 
-#logica incorreta - nao deveria loopar por array
-print (popular_words('a b c',['a','b','b','b','c','d']))
-
+    return (popudict)
+        
 print (popular_words('When I was One I had just begun When I was Two I was nearly new',['i','was','three','near']))
 
