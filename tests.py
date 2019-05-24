@@ -1,34 +1,36 @@
-# https://py.checkio.org/en/mission/between-markers/
+''' Positive integers can be expressed as sums of consecutive positive integers in various ways.
+For example, 42 can be expressed as such a sum in four different ways:
+'''
+#(a) 3+4+5+6+7+8+9, (b) 9+10+11+12, (c) 13+14+15 and (d) 42.
+'''
+As the last solution (d) shows, any positive integer can always be trivially expressed
+as a singleton sum that consists of that integer alone.
 
-def between_markers (string, init, final):
-    first = string.find(init)
-    last = string.find(final)
+Compute how many different ways it can be expressed as a sum of consecutive positive integers.
 
-    print ('First:', first, ' Last:' , last)
+count_consecutive_summers(42) == 4
 
-    if (first == -1 and last == -1):
-        print ('Loop 1')
-        return (string)
+count_consecutive_summers(99) == 6
+'''
 
-    if (first == -1):
-        print ('Loop 2')
-        return (string[0:last])
-
-    if (last == -1):
-        print ('Loop 3')
-        return (string[first+len(init):999])
-
-    if (last < first):
-        print ('Loop 4')
-        return ''
-
-    print ('Loop 5')
-    return (string[(first+len(init)):last])    
+num = 42
+count = 0
 
 
-#print (between_markers('What is >apple<', '>', '<'))
-#print(between_markers('No[/b] hi', '[b]', '[/b]'))
+def consecutive (count):
+    count += 1
+    print (count)
+    if (count <= num):
+        consecutive(count)
 
-#print(between_markers("<head><title>My new site</title></head>","<title>","</title>"))
 
-print(between_markers("No [b]hi","[b]","[/b]"))
+consecutive(0)
+
+
+'''
+while (count <= num):
+    print (count, ' ' ,num)
+    count += 1
+    sum += 1
+    #print (sum)
+'''
