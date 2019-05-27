@@ -1,31 +1,16 @@
-'''
-all_the_same([1, 1, 1]) == True
+#https://py.checkio.org/en/mission/non-unique-elements/
 
-all_the_same([1, 2, 1]) == False
+def checkio(array):
+    non_unique_list = []
+    for element in array:
+        if (array.count(element) > 1):
+            non_unique_list.append(element)
 
-all_the_same(['a', 'a', 'a']) == True
-
-all_the_same([]) == True
-'''
-
-def all_the_same (lista):
-    if not lista:
-        return True
-
-    comp = lista[0]
-    equal = False
+    return (non_unique_list)
+            
 
 
-    
-    for element in lista:
-        if (element == comp):
-            equal = True
-        else:
-            return False
-    if (equal):
-        return True
+#checkio(['1','2','1','2','3'])
 
+print (checkio(['5','5','5','5','5']))
 
-print (all_the_same([]))
-        
-        
