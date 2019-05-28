@@ -5,19 +5,21 @@ sun_angle("01:23") == "I don't see the sun!"
 '''
 
 def sun_angle(time):
-    hour = time[1:2]
+    hour = time[0:2]
     minute = time[3:5]
 
+    print (hour)
+    print (minute)
+
     time = int(hour) * 60 + int(minute)
+    print (time)
 
-    #print (hour ,minute)
 
-    #print (time)
+    if (time < 360 or time > 1080):
+        return ("I don't see the sun!")
 
-    # tratar horario noturno
-    # 2 casas decimais
-    
-    angle = (time - 360 / 4.00)
+    angle = ((time - 360) / 4.00)
+    #angle = "{:.2f}".format(angle)
 
     return angle
 
